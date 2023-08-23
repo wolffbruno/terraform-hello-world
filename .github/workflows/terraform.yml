@@ -42,7 +42,7 @@ jobs:
       run: terraform plan -input=false
 
     - name: Echo ref
-      run: echo ${{ github.ref }}
+      run: echo ${{ github.ref }} ${{ github.event_name }}
 
     - name: Terraform Apply
       working-directory: ./terraform
