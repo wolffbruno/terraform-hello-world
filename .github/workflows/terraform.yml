@@ -41,6 +41,9 @@ jobs:
       working-directory: ./terraform
       run: terraform plan -input=false
 
+    - name: Echo ref
+      run: echo ${{ github.ref }}
+
     - name: Terraform Apply
       working-directory: ./terraform
       if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
